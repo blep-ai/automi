@@ -18,12 +18,15 @@ type BatchOperator struct {
 	output  chan interface{}
 	logf    api.LogFunc
 	trigger api.BatchTrigger
+	delayLast bool
 }
 
 // New returns a new BatchOperator operator
-func New() *BatchOperator {
+// delayLast: latest value included in next batch instead of current batch.
+func New(delayLast bool) *BatchOperator {
 	op := new(BatchOperator)
 	op.output = make(chan interface{}, 1024)
+	op.delayLast = delayLast
 	return op
 }
 
@@ -92,23 +95,42 @@ func (op *BatchOperator) Exec(ctx context.Context) (err error) {
 					batchValue = reflect.MakeSlice(reflect.SliceOf(batchType), 0, 1)
 				}
 
-				batchValue = reflect.Append(batchValue, reflect.ValueOf(item))
-				done := op.trigger.Done(ctx, item, index)
-				if !done {
-					index++
-					continue
-				}
+				if !op.delayLast {
+					batchValue = reflect.Append(batchValue, reflect.ValueOf(item))
+					done := op.trigger.Done(ctx, item, index)
+					if !done {
+						index++
+						continue
+					}
 
-				// done batching, push downstream
-				select {
-				case op.output <- batchValue.Interface():
-					index = 1
-					batchType := op.makeBatchType(item)
-					batchValue = reflect.MakeSlice(reflect.SliceOf(batchType), 0, 1)
-				case <-exeCtx.Done():
-					return
-				}
+					// done batching, push downstream
+					select {
+					case op.output <- batchValue.Interface():
+						index = 1
+						batchType := op.makeBatchType(item)
+						batchValue = reflect.MakeSlice(reflect.SliceOf(batchType), 0, 1)
+					case <-exeCtx.Done():
+						return
+					}
+				} else {
+					done := op.trigger.Done(ctx, item, index)
+					if !done {
+						batchValue = reflect.Append(batchValue, reflect.ValueOf(item))
+						index++
+						continue
+					}
 
+					// done batching, push downstream then append current value
+					select {
+					case op.output <- batchValue.Interface():
+						index = 1
+						batchType := op.makeBatchType(item)
+						batchValue = reflect.MakeSlice(reflect.SliceOf(batchType), 0, 1)
+						batchValue = reflect.Append(batchValue, reflect.ValueOf(item))
+					case <-exeCtx.Done():
+						return
+					}
+				}
 			case <-exeCtx.Done():
 				return
 			}

@@ -7,14 +7,20 @@ import (
 )
 
 func (s *Stream) Batch() *Stream {
-	operator := batch.New()
+	operator := batch.New(false)
 	operator.SetTrigger(batch.TriggerAll())
 	return s.appendOp(operator)
 }
 
 func (s *Stream) BatchBySize(size int64) *Stream {
-	operator := batch.New()
+	operator := batch.New(false)
 	operator.SetTrigger(batch.TriggerBySize(size))
+	return s.appendOp(operator)
+}
+
+func (s *Stream) BatchBeforeTrigger(fn api.BatchTriggerFunc) *Stream {
+	operator := batch.New(true)
+	operator.SetTrigger(fn)
 	return s.appendOp(operator)
 }
 
