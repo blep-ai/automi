@@ -6,5 +6,4 @@ require (
 	github.com/vladimirvivien/automi v0.1.0-alpha.0 // indirect
 )
 
-//replace github.com/jackc/pgtype => ./lib/pgtype
-replace github.com/vladimirvivien/automi => github.com/blep-ai/automi
+replace github.com/vladimirvivien/automi => ./
