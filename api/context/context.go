@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/vladimirvivien/automi/api"
+	"github.com/blep-ai/automi/api"
 )
 
 type ctxKey int

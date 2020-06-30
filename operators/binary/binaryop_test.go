@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/vladimirvivien/automi/api"
-	"github.com/vladimirvivien/automi/testutil"
+	"github.com/blep-ai/automi/api"
+	"github.com/blep-ai/automi/testutil"
 )
 
 func TestBinaryOp_New(t *testing.T) {

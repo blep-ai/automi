@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/vladimirvivien/automi/testutil"
+	"github.com/blep-ai/automi/testutil"
 )
 
 func TestCsvCollector_New(t *testing.T) {

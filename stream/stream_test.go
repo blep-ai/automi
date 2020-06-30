@@ -6,9 +6,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/vladimirvivien/automi/api"
-	"github.com/vladimirvivien/automi/collectors"
-	"github.com/vladimirvivien/automi/emitters"
+	"github.com/blep-ai/automi/api"
+	"github.com/blep-ai/automi/collectors"
+	"github.com/blep-ai/automi/emitters"
 )
 
 func TestStream_New(t *testing.T) {

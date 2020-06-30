@@ -1,6 +1,6 @@
 package stream
 
-import "github.com/vladimirvivien/automi/operators/binary"
+import "github.com/blep-ai/automi/operators/binary"
 
 // Reduce accumulates and reduces items from upstream into a
 // single value using the initial seed value and the reduction

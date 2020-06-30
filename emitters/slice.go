@@ -5,9 +5,9 @@ import (
 	"errors"
 	"reflect"
 
-	"github.com/vladimirvivien/automi/api"
-	autoctx "github.com/vladimirvivien/automi/api/context"
-	"github.com/vladimirvivien/automi/util"
+	"github.com/blep-ai/automi/api"
+	autoctx "github.com/blep-ai/automi/api/context"
+	"github.com/blep-ai/automi/util"
 )
 
 // SliceEmitter is an emitter that takes in a slice and

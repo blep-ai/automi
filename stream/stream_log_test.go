@@ -8,9 +8,9 @@ import (
 	"testing"
 	"time"
 
-	autoctx "github.com/vladimirvivien/automi/api/context"
-	"github.com/vladimirvivien/automi/collectors"
-	"github.com/vladimirvivien/automi/emitters"
+	autoctx "github.com/blep-ai/automi/api/context"
+	"github.com/blep-ai/automi/collectors"
+	"github.com/blep-ai/automi/emitters"
 )
 
 func TestStream_Log_No_Log(t *testing.T) {

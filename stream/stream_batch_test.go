@@ -4,8 +4,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/vladimirvivien/automi/collectors"
-	"github.com/vladimirvivien/automi/emitters"
+	"github.com/blep-ai/automi/collectors"
+	"github.com/blep-ai/automi/emitters"
 )
 
 func TestStream_GroupByKey(t *testing.T) {

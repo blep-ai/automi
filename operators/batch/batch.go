@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/vladimirvivien/automi/api"
-	autoctx "github.com/vladimirvivien/automi/api/context"
-	"github.com/vladimirvivien/automi/util"
+	"github.com/blep-ai/automi/api"
+	autoctx "github.com/blep-ai/automi/api/context"
+	"github.com/blep-ai/automi/util"
 )
 
 // BatchOperator is an executor that batches incoming streamed items based

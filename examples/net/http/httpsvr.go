@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/vladimirvivien/automi/stream"
+	"github.com/blep-ai/automi/stream"
 )
 
 // HTTP example that returns a base64 encoding of http Body.

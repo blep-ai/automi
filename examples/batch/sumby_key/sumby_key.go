@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/vladimirvivien/automi/collectors"
-	"github.com/vladimirvivien/automi/stream"
+	"github.com/blep-ai/automi/collectors"
+	"github.com/blep-ai/automi/stream"
 )
 
 func main() {

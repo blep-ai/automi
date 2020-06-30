@@ -5,7 +5,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/vladimirvivien/automi/stream"
+	"github.com/blep-ai/automi/stream"
 )
 
 // scientist represents row data in source (csv file)

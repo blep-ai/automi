@@ -4,9 +4,9 @@ import (
 	"context"
 	"errors"
 
-	"github.com/vladimirvivien/automi/api"
-	autoctx "github.com/vladimirvivien/automi/api/context"
-	"github.com/vladimirvivien/automi/util"
+	"github.com/blep-ai/automi/api"
+	autoctx "github.com/blep-ai/automi/api/context"
+	"github.com/blep-ai/automi/util"
 )
 
 // CollectorFunc is a function used to colllect

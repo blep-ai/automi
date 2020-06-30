@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/vladimirvivien/automi/collectors"
-	"github.com/vladimirvivien/automi/emitters"
-	"github.com/vladimirvivien/automi/stream"
+	"github.com/blep-ai/automi/collectors"
+	"github.com/blep-ai/automi/emitters"
+	"github.com/blep-ai/automi/stream"
 )
 
 // Streams data from CSV and store collected result in CSV

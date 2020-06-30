@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/vladimirvivien/automi/stream"
+	"github.com/blep-ai/automi/stream"
 )
 
 func main() {

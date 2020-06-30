@@ -6,8 +6,8 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/vladimirvivien/automi/api"
-	"github.com/vladimirvivien/automi/util"
+	"github.com/blep-ai/automi/api"
+	"github.com/blep-ai/automi/util"
 )
 
 // GroupByPosFunc generates an api.Unary function that groups incoming batched items

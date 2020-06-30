@@ -10,9 +10,9 @@ import (
 	"os"
 	"path/filepath"
 
-	autoctx "github.com/vladimirvivien/automi/api/context"
-	"github.com/vladimirvivien/automi/collectors"
-	"github.com/vladimirvivien/automi/stream"
+	autoctx "github.com/blep-ai/automi/api/context"
+	"github.com/blep-ai/automi/collectors"
+	"github.com/blep-ai/automi/stream"
 )
 
 // Demostrates stream runtime logging. Uses the examples/md5 as basis.

@@ -1,7 +1,7 @@
 package util
 
 import (
-	"github.com/vladimirvivien/automi/api"
+	"github.com/blep-ai/automi/api"
 )
 
 // Logfn if f is not nil, invokes f(msg)
